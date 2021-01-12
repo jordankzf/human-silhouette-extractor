@@ -2,7 +2,7 @@
 
 This repository presents a comparison of DeepLabv3, FCN, MOG2 and GMG in extracting human silhouettes from videos. Three videos were recorded: (a) static camera, constant illumination (b) moving camera, constant illumination and (c) static camera, dynamic illumination. The ResNet-101 based models were used to semantically segment human pixels in each frame to create a silhouette binary mask. Binary maps from manual rotoscoping was used as a ground truth to generate a confusion matrix producing the mean F-score of 0.96, 0.95, 0.26 and 0.22 at the mean FPS of 1.00, 1.20, 15.76, and 8.23, respectively. 
 
-<img src="images/visualResults.png">
+<img src="images/visualResults.png" width="600">
 
 # Dataset
 
@@ -40,15 +40,15 @@ A custom test dataset was deemed most suited for this report to compare the test
 
 # Flowchart
 
-<img src="images/flowchart.png">
+<img src="images/flowchart.png" width="600">
 
 # Results
 
-<img src="images/confusionMatrix.png">
+<img src="images/confusionMatrix.png" width="600">
 
-<img src="images/accuracy.png">
+<img src="images/accuracy.png" width="600">
 
-<img src="images/speedVsAccuracy.png">
+<img src="images/speedVsAccuracy.png" width="600">
 
 # References
 
