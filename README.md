@@ -73,6 +73,10 @@ The speed results are the opposite of the accuracy results. DeepLabv3 performs t
 
 When comparing speed and accuracy, computer vision methods have a major advantage in terms of speed, while CNN methods triumph in accuracy. Among the 4 methods discussed, there does not seem to be a middle ground compromise where both speed and accuracy is balanced. The methods only excel in one metric or the other. Between DeepLabv3 and FCN however, FCN is 20% faster with only a 1% accuracy penalty. FCN is the preferred option in this scenario when using a CNN based approach. For the statistical background modelling approaches, MOG2 is superior to GMG as it is 91% faster and 18% more accurate.
 
+# Conclusion
+
+Convolutional neural networks are an abundant class of models that tackle numerous pixelwise tasks. CNNs excel in semantic segmentation in images which can be adapted to extract human silhouettes from videos. The proposed ResNet-101 based solutions using DeepLabv3 and FCN demonstrate accurate results with the overall F-score of 0.96 albeit with a significant performance penalty, running at 1.00 and 1.20 FPS compared to 15.76 and 8.23 FPS of MOG2 and GMG, respectively. A trade-off method that performs well in terms of both accuracy and speed could be found to act as a middle ground to be used in real time applications. A newer CNN based approach such as Faster R-CNN or Context Encoding Network (EncNet) could be explored to address the current limitations.
+
 # References
 
 | No. | Citation |
