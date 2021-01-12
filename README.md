@@ -6,7 +6,7 @@ This repository presents a comparison of DeepLabv3, FCN, MOG2 and GMG in extract
 
 Visually, for test videos 1 and 2, the CNN methods produce nearly perfect segmentation results. They are less accurate for the third video where the limbs of the subject appear to be missing. For all 3 test videos, the computer vision methods deliver poor results where there are holes in the foreground, and the background is wrongly detected as a human silhouette.
 
-# Typical Process
+## Typical Process
 
 There are many solutions currently available and in-use. It is difficult for a computer vision algorithm to compensate for changes in lighting and camera movement, limiting the use case to static and uniform backgrounds [3]. Due to that, most computer vision techniques are imprecise and do not properly extract all foreground elements [6]. Generally, most algorithms have three main processes to achieve silhouette extraction [4]:
 
@@ -16,7 +16,7 @@ There are many solutions currently available and in-use. It is difficult for a c
 | Detect foreground | For a given frame, the frame is compared with the background model generated. The comparison can be done via subtraction which would result in extracting the foreground pixels. |
 | Maintain background | Based on the learning rate specified, the background model generated in the first process is updated based on the new frames observed. Usually, pixels that have not moved for a long time would be considered as part of the background and hence added to the model. |
 
-# Dataset
+## Dataset
 
 A custom test dataset was deemed most suited for this report to compare the tested methods fairly and extensively. The following criterion was created:
 
@@ -31,13 +31,13 @@ A custom test dataset was deemed most suited for this report to compare the test
 | **2** | Extreme | Fixed | Complex | Both on auto | Stimulates an extreme case of camera shake. Camera follows moving subject. |
 | **3** | None | Extreme | Complex | Both on auto | Stimulates an extreme case of lighting changes. Room alternates from being illuminated with natural sunlight from windows and no lighting. |
 
-# Flowchart
+## Flowchart
 
 The .VideoCapture function from OpenCV is used to capture video files from a device or file source. Then, the .read function is used to extract each frame individually. Using the DeepLab pretrained model, a mask is created of the human pixels present in the frame. Next, a bitwise operation is applied to the frame by multiplying the source with the generated mask. The resulting frame is then displayed to the user via the .imshow function. 
 
 <img src="images/flowchart.png" width="600">
 
-# Functions
+## Functions
 
 | Function | Description |
 | --- | --- |
@@ -49,7 +49,7 @@ The .VideoCapture function from OpenCV is used to capture video files from a dev
 | Save processed video | Output processed file. |
 
 
-# Results
+## Results
 
 <img src="images/confusionMatrix.png" width="600">
 
@@ -73,11 +73,11 @@ The speed results are the opposite of the accuracy results. DeepLabv3 performs t
 
 When comparing speed and accuracy, computer vision methods have a major advantage in terms of speed, while CNN methods triumph in accuracy. Among the 4 methods discussed, there does not seem to be a middle ground compromise where both speed and accuracy is balanced. The methods only excel in one metric or the other. Between DeepLabv3 and FCN however, FCN is 20% faster with only a 1% accuracy penalty. FCN is the preferred option in this scenario when using a CNN based approach. For the statistical background modelling approaches, MOG2 is superior to GMG as it is 91% faster and 18% more accurate.
 
-# Conclusion
+## Conclusion
 
 Convolutional neural networks are an abundant class of models that tackle numerous pixelwise tasks. CNNs excel in semantic segmentation in images which can be adapted to extract human silhouettes from videos. The proposed ResNet-101 based solutions using DeepLabv3 and FCN demonstrate accurate results with the overall F-score of 0.96 albeit with a significant performance penalty, running at 1.00 and 1.20 FPS compared to 15.76 and 8.23 FPS of MOG2 and GMG, respectively. A trade-off method that performs well in terms of both accuracy and speed could be found to act as a middle ground to be used in real time applications. A newer CNN based approach such as Faster R-CNN or Context Encoding Network (EncNet) could be explored to address the current limitations.
 
-# References
+## References
 
 | No. | Citation |
 | --- | --- |
