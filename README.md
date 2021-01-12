@@ -19,7 +19,7 @@ A custom test dataset was deemed most suited for this report to compare the test
 | **2** | Extreme | Fixed | Complex | Both on auto | Stimulates an extreme case of camera shake. Camera follows moving subject. |
 | **3** | None | Extreme | Complex | Both on auto | Stimulates an extreme case of lighting changes. Room alternates from being illuminated with natural sunlight from windows and no lighting. |
 
-# Typical Process
+# Typical Process (Computer Vision Technique)
 
 | Process | Description |
 | --- | --- |
